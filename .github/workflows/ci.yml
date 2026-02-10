@@ -17,3 +17,17 @@ jobs:
 
     - name: Test
       run: echo "Tests completed"
+
+    - name: Notify Slack - Build Success
+      if: success()
+      run: |
+        curl -X POST -H 'Content-type: application/json' \
+        --data '{"text":"✅ CI Pipeline Successful for devops-webapp"}' \
+        ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    - name: Notify Slack - Build Failure
+      if: failure()
+      run: |
+        curl -X POST -H 'Content-type: application/json' \
+        --data '{"text":"❌ CI Pipeline Failed for devops-webapp"}' \
+        ${{ secrets.SLACK_WEBHOOK_URL }}
