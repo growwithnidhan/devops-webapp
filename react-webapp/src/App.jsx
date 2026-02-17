@@ -10,7 +10,7 @@ function App() {
         textAlign: "center",
       }}
     >
-      <h1>DevOps CI/CD Pipeline with React Demo</h1>
+      <h1>DevOps CI/CD Pipeline with React Demo Nidhan</h1>
       <p>Built using GitHub Actions, Slack ChatOps & Netlify</p>
       <p>Auto deployment on every commit</p>
     </div>
